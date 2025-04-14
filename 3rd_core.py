@@ -1,19 +1,28 @@
-import time
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.options import Options as ChromeOptions
-chrome_options = ChromeOptions()
-
-chrome_options.add_extension("C:\\Users\\HP\\PycharmProjects\\selenium demo\\matamask.crx")
-driver = webdriver.Chrome("C:\\Users\\HP\\Downloads\\chromedriver_win32.exe")
-driver = webdriver.Chrome('./chrome.drive', options=chrome_options)
-driver.get("https://www.pariopad.com/launchpad/create?blockchain=80001")
-driver.maximize_window()
-driver.find_element(By.XPATH, "//button[contains(text(),'Connect Wallet')]").click()
-driver.find_element("id","Token Address").send_keys("0x790fDe4912d5438Cd0fFEDC8aa42bbe77D95b4C1")
-#input('Press[ENTER] to close browser...')
-#driver.quit()
-time.sleep(20)
+playwright-saucedemo/
+│
+├── tests/
+│   ├── sort.spec.ts            # Sorting tests (Z-A, High-Low)
+│   ├── cart-checkout.spec.ts   # Cart & Checkout journey
+│   ├── visual.spec.ts          # Visual regression (bonus)
+│   ├── accessibility.spec.ts   # Accessibility tests (bonus)
+│
+├── pages/                      # Page Object Models
+│   ├── login.page.ts
+│   ├── inventory.page.ts
+│   ├── cart.page.ts
+│   ├── checkout.page.ts
+│
+├── utils/
+│   ├── helpers.ts              # Utility functions (e.g., login helper)
+│   └── visualHelper.ts         # Visual regression config (if using Percy or similar)
+│
+├── tests-execution/
+│   ├── reports/
+│   └── logs/
+│
+├── .github/
+│   └── workflows/ci.yml        # Optional: GitHub Actions for CI/CD (extra credit)
+│
+├── playwright.config.ts
+├── package.json
+└── README.md
